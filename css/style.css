@@ -5,16 +5,16 @@
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,20 +22,27 @@
 /*******************************************/
 
 body {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(71, 71, 71);
 }
 
+* {
+  color: white;
+}
+
+#getDataButton {
+  background-color: rgb(32, 122, 52);
+  width: 140px;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
+header {}
 
-}
-
-footer {
-
-}
+footer {}
 
 /******************************************
 /* ADDITIONAL STYLES
