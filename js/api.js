@@ -22,32 +22,33 @@ async function apiCall(endpoint, filters) {
 // const platformSelected = document.querySelector('________').value
 
 async function getListOfGames() {
+    const genres = await listOfGenres()
     const numOfGames = 10 // max is 40 games returned per request
     const pageNumber = 1 // change this number to see a different page of results
-    const response = await apiCall('games', `page_size=${numOfGames}&page=${pageNumber}&platforms=${nSwitch}`)  // platform selected goes here
+    const response = await apiCall('games', `page_size=${numOfGames}&page=${pageNumber}&platforms=${xboxOne}&genres=${genres['massively-multiplayer']}`)  // platform selected goes here
     // check the console to see what comes back from the API initially. Click the dropdown arrow, then 'results'
     console.log(response)
 }
 
-
-const genres = {}
-async function getListOfGenres() {
+async function listOfGenres() {
+    const genres = {}
     const response = await apiCall('genres')
     const results = response.results
     // dynamically create key/ value pairs in object of games genres and IDs
     for (const result of results) {
-        genres[result.name] = result.id;
+        genres[result.slug] = result.id;
     }
     console.log('genres: ', genres)
+    return genres;
 }
 
 
 // adding button so that api requests are only used on button click and not on page load
 document.querySelector('#getDataButton').addEventListener('click', function () {
-    getListOfGenres()
     getListOfGames()
 })
-// the next step is to filter results with search parameters in the 'getListOfGames' API request
+
+
 // once the games we want are returned, pull the ID from the games object and send a seperate request to get the details. 
 // This link has the list of the details (responses) about the game we can choose from to show the user https://api.rawg.io/docs/#operation/games_read once we have the gameID from the original request
 async function getGameDetails(gameID) {
