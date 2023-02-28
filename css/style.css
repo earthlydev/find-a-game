@@ -1,3 +1,12 @@
+:root {
+  /* colors */
+  --clr-green: rgb(36, 174, 108);
+  --clr-purple: rgb(127, 90, 240);
+  --clr-grey: rgb(36, 38, 41);
+  --clr-light-grey: rgb(114, 117, 126);
+  --clr-black: rgb(22, 22, 26);
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -25,25 +34,72 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(71, 71, 71);
+  background-color: var(--clr-grey);
+  color: rgb(255, 255, 255);
 }
 
-* {
-  color: white;
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
-#getDataButton {
-  background-color: rgb(32, 122, 52);
-  width: 140px;
+.flow>*:where(:not(:first-child)) {
+  margin-left: var(--flow-space, 1em);
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {}
+/* colors */
+.bg-green {
+  background-color: var(--clr-green);
+}
+.bg-purple {
+  background-color: var(--clr-purple);
+}
+.bg-grey {
+  background-color: var(--clr-grey);
+}
+.bg-light-grey {
+  background-color: var(--clr-light-grey);
+}
+.bg-black {
+  background-color: var(--clr-black);
+}
 
-footer {}
+/* --------------- */
+/* Components      */
+/* --------------- */
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+/* general button & select style */
+.btn-select-style {
+  background-color: var(--clr-black);
+  color: rgb(255, 255, 255);
+  border: 3px solid var(--clr-green);
+}
+
+.btn {
+  border-radius: 23px;
+  min-width: 8rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+}
+
+/* genre select */
+.genre-select {
+  border-radius: 8px;
+  padding: .5rem 1.5rem;
+}
+
+/* --------------- */
+/* Layout          */
+/* --------------- */
+
+/* landing layout */
+.landing {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
