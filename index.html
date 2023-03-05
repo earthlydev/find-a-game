@@ -15,46 +15,74 @@
 </head>
 
 <body>
-	<h1>find-a-game</h1>
-	<!-- this button is for testing -- results get logged to the console when button is clicked -->
-	<button id="getDataButton" class="btn btn-select-style">Get API Data</button>
-	<main class="flex landing">
-		<h2>Platform</h2>
-		<div class="flow">
-			<button class="btn btn-select-style">PS4/PS5</button>
-			<button class="btn btn-select-style">Xbox</button>
-			<button class="btn btn-select-style">Switch</button>
-			<button class="btn btn-select-style">PC</button>
+	<div id="bg">
+		<div id="contentWrapper">
+			<div class="glitch-wrapper">
+				<div class="glitch" data-glitch="Game Finder">Game Finder</div>
+			 </div>
+			<!-- this button is for testing -- results get logged to the console when button is clicked -->
+			<button id="getDataButton" class="btn btn-select-style">Get API Data</button>
+			<main class="flex landing">
+				<h2>Platform</h2>
+				<div class="flow">
+					<button class="btn btn-select-style">PS4/PS5</button>
+					<button class="btn btn-select-style">Xbox</button>
+					<button class="btn btn-select-style">Switch</button>
+					<button class="btn btn-select-style">PC</button>
+				</div>
+				<h2>Genre</h2>
+				<select name="genre" id="genre-select" class="genre-select btn-select-style">
+					<option value="#">-- Select a Genre --</option>
+					<option value="Action">Action</option>
+					<option value="Adventure">Adventure</option>
+					<option value="Arcade">Arcade</option>
+					<option value="Board Games">Board Games</option>
+					<option value="Card">Card</option>
+					<option value="Casual">Casual</option>
+					<option value="Educational">Educational</option>
+					<option value="Family">Family</option>
+					<option value="Fighting">Fighting</option>
+					<option value="Horror">Horror</option>
+					<option value="Indie">Indie</option>
+					<option value="Massively Multiplayer Online">Massively Multiplayer Online</option>
+					<option value="Platformer">Platformer</option>
+					<option value="Puzzle">Puzzle</option>
+					<option value="Racing">Racing</option>
+					<option value="RPG">RPG</option>
+					<option value="Shooter">Shooter</option>
+					<option value="Simulation">Simulation</option>
+					<option value="Sports">Sports</option>
+					<option value="Strategy">Strategy</option>
+				</select>
+				<button class="btn btn-select-style">Generate</button>
+			</main>
 		</div>
-		<h2>Genre</h2>
-		<select name="genre" id="genre-select" class="genre-select btn-select-style">
-			<option value="#">-- Select a Genre --</option>
-			<option value="Action">Action</option>
-			<option value="Adventure">Adventure</option>
-			<option value="Arcade">Arcade</option>
-			<option value="Board Games">Board Games</option>
-			<option value="Card">Card</option>
-			<option value="Casual">Casual</option>
-			<option value="Educational">Educational</option>
-			<option value="Family">Family</option>
-			<option value="Fighting">Fighting</option>
-			<option value="Horror">Horror</option>
-			<option value="Indie">Indie</option>
-			<option value="Massively Multiplayer Online">Massively Multiplayer Online</option>
-			<option value="Platformer">Platformer</option>
-			<option value="Puzzle">Puzzle</option>
-			<option value="Racing">Racing</option>
-			<option value="RPG">RPG</option>
-			<option value="Shooter">Shooter</option>
-			<option value="Simulation">Simulation</option>
-			<option value="Sports">Sports</option>
-			<option value="Strategy">Strategy</option>
-		</select>
-		<button class="btn btn-select-style">Generate</button>
-	</main>
+	</div>
+
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+	<script>
+		  VANTA.WAVES({
+			el: "#bg",
+			mouseControls: false,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: 200.0,
+			minWidth: 200.0,
+			scale: 1.0,
+			scaleMobile: 1.0,
+			spacing: 20,
+			color: 0x0,
+			backgroundColor: 0x010f18
+		});
+	</script>
+
 
 	<script type="module" src="js/api.js"></script>
 	<script type="module" src="js/main.js"></script>
+	
 </body>
 
 </html>
