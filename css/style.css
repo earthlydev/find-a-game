@@ -35,6 +35,7 @@ body {
   flex-direction: column;
   align-items: center;
   color: rgb(255, 255, 255);
+  background-color: black;
 }
 
 /* ------------------- */
@@ -212,3 +213,13 @@ body {
     margin: 10px;
   }
 
+
+
+  /* animations */
+
+  .fadeIn { animation: fadeIn 2s ease-in-out forwards; }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
