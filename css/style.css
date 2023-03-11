@@ -60,8 +60,12 @@ h1 {
   gap: var(--gap, 1rem);
 }
 
-.flow>*:where(:not(:first-child)) {
-  margin-left: var(--flow-space, 1em);
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
 }
 
 /* colors */
@@ -101,6 +105,7 @@ h1 {
   min-width: 8rem;
   padding: .5rem 1.5rem;
   cursor: pointer;
+  margin: 5px;
 }
 
 /* genre select */
