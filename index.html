@@ -15,58 +15,76 @@
 </head>
 
 <body>
-	<h1>find-a-game</h1>
-	<main class="flex landing">
-		<h2>Platform</h2>
-		<div class="flow">
-			<button class="btn btn-select-style">PS4/PS5</button>
-			<button class="btn btn-select-style">Xbox</button>
-			<button class="btn btn-select-style">Switch</button>
-			<button class="btn btn-select-style">PC</button>
-		</div>
-		<h2>Genre</h2>
-		<select name="genre" id="genre-select" class="genre-select btn-select-style">
-			<option value="#">-- Select a Genre --</option>
-			<option value="Action">Action</option>
-			<option value="Adventure">Adventure</option>
-			<option value="Arcade">Arcade</option>
-			<option value="Board Games">Board Games</option>
-			<option value="Card">Card</option>
-			<option value="Casual">Casual</option>
-			<option value="Educational">Educational</option>
-			<option value="Family">Family</option>
-			<option value="Fighting">Fighting</option>
-			<option value="Horror">Horror</option>
-			<option value="Indie">Indie</option>
-			<option value="Massively Multiplayer Online">Massively Multiplayer Online</option>
-			<option value="Platformer">Platformer</option>
-			<option value="Puzzle">Puzzle</option>
-			<option value="Racing">Racing</option>
-			<option value="RPG">RPG</option>
-			<option value="Shooter">Shooter</option>
-			<option value="Simulation">Simulation</option>
-			<option value="Sports">Sports</option>
-			<option value="Strategy">Strategy</option>
-		</select>
-		<button id="generate" class="btn btn-select-style">Generate</button>
-		<section class="list-of-games-container">
-			<table class="list-of-games" id="list">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Image</th>
-						<th>other</th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- td elements are inserted here with js -->
-				</tbody>
-			</table>
-		</section>
-	</main>
-
+	<div id="wrapper">
+		<div class="glitch-wrapper">
+			<h1 class="glitch" data-glitch="Game Finder">Game Finder</h1>
+		 </div>
+		<main class="flex landing">
+			<h2>Platform</h2>
+			<div class="flow">
+				<button class="btn btn-select-style">PS4/PS5</button>
+				<button class="btn btn-select-style">Xbox</button>
+				<button class="btn btn-select-style">Switch</button>
+				<button class="btn btn-select-style">PC</button>
+			</div>
+			<h2>Genre</h2>
+			<select name="genre" id="genre-select" class="genre-select btn-select-style">
+				<option value="#">-- Select a Genre --</option>
+				<option value="Action">Action</option>
+				<option value="Adventure">Adventure</option>
+				<option value="Arcade">Arcade</option>
+				<option value="Board Games">Board Games</option>
+				<option value="Card">Card</option>
+				<option value="Casual">Casual</option>
+				<option value="Educational">Educational</option>
+				<option value="Family">Family</option>
+				<option value="Fighting">Fighting</option>
+				<option value="Horror">Horror</option>
+				<option value="Indie">Indie</option>
+				<option value="Massively Multiplayer Online">Massively Multiplayer Online</option>
+				<option value="Platformer">Platformer</option>
+				<option value="Puzzle">Puzzle</option>
+				<option value="Racing">Racing</option>
+				<option value="RPG">RPG</option>
+				<option value="Shooter">Shooter</option>
+				<option value="Simulation">Simulation</option>
+				<option value="Sports">Sports</option>
+				<option value="Strategy">Strategy</option>
+			</select>
+			<button id="generate" class="btn btn-select-style">Generate</button>
+			<section class="list-of-games-container">
+				<table class="list-of-games" id="list">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Image</th>
+							<th>other</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- td elements are inserted here with js -->
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 	<script type="module" src="js/api.js"></script>
 	<script type="module" src="js/main.js"></script>
+	<script>
+		VANTA.WAVES({
+		  el: "#wrapper",
+		  mouseControls: true,
+		  touchControls: true,
+		  gyroControls: false,
+		  minHeight: 200.00,
+		  minWidth: 200.00,
+		  scale: 1.00,
+		  scaleMobile: 1.00,
+		  color: 0x0
+		})
+		</script>
 </body>
 
 </html>
