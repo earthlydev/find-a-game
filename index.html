@@ -16,8 +16,6 @@
 
 <body>
 	<h1>find-a-game</h1>
-	<!-- this button is for testing -- results get logged to the console when button is clicked -->
-	<button id="getDataButton" class="btn btn-select-style">Get API Data</button>
 	<main class="flex landing">
 		<h2>Platform</h2>
 		<div class="flow">
@@ -50,7 +48,21 @@
 			<option value="Sports">Sports</option>
 			<option value="Strategy">Strategy</option>
 		</select>
-		<button class="btn btn-select-style">Generate</button>
+		<button id="generate" class="btn btn-select-style">Generate</button>
+		<section class="list-of-games-container">
+			<table class="list-of-games" id="list">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Image</th>
+						<th>other</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- td elements are inserted here with js -->
+				</tbody>
+			</table>
+		</section>
 	</main>
 
 	<script type="module" src="js/api.js"></script>
