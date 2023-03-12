@@ -39,6 +39,8 @@ body {
   align-items: center;
   background-color: var(--clr-grey);
   color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h1, h2 {
@@ -136,9 +138,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
-  position: fixed;
+  height: calc(fit-content + 100);
   z-index: -1;
+ 
 }
 
 .landing {
