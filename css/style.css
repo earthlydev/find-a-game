@@ -138,9 +138,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: calc(fit-content + 100);
-  z-index: -1;
- 
+  height: calc(fit-content + 100); 
 }
 
 .landing {
