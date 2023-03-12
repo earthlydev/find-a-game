@@ -39,6 +39,8 @@ body {
   align-items: center;
   background-color: var(--clr-grey);
   color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h1, h2 {
@@ -60,8 +62,12 @@ h1 {
   gap: var(--gap, 1rem);
 }
 
-.flow>*:where(:not(:first-child)) {
-  margin-left: var(--flow-space, 1em);
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
 }
 
 /* colors */
@@ -94,7 +100,19 @@ h1 {
   background-color: var(--clr-black);
   color: rgb(255, 255, 255);
   border: 3px solid var(--clr-green);
+  margin: 5px;
+  transition: background-color .5s ease-in-out;
 }
+
+.btn-hover-style:hover {
+  background-color: var(--clr-purple);
+}
+
+.btn-select-style:active {
+  background-color: var(--clr-purple);
+}
+
+
 
 .btn {
   border-radius: 23px;
@@ -114,6 +132,17 @@ h1 {
 /* --------------- */
 
 /* landing layout */
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: calc(fit-content + 100);
+  z-index: -1;
+ 
+}
+
 .landing {
   flex-direction: column;
   align-items: center;
@@ -149,4 +178,76 @@ thead {
 
 td {
   height: 50px;
+}
+
+
+
+/* Animations and effects */
+.glitch-wrapper {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.glitch {
+  position: relative;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #0ff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #ff00ff;
+  z-index: -2;
+}
+
+@keyframes glitch-color {
+  0% {
+     transform: translate(0);
+  }
+
+  20% {
+     transform: translate(-3px, 3px);
+  }
+
+  40% {
+     transform: translate(-3px, -3px);
+  }
+
+  60% {
+     transform: translate(3px, 3px);
+  }
+
+  80% {
+     transform: translate(3px, -3px);
+  }
+
+  to {
+     transform: translate(0);
+  }
 }
